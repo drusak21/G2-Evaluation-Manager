@@ -1,4 +1,5 @@
-﻿using System;
+﻿using G2_Evaluation_Manager.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +15,9 @@ namespace G2_Evaluation_Manager
     public partial class FrmLogin : Form
     {
 
-        string username = "nastavnik";
-        string password = "test";
+        public static Teacher LoggedTeacher { get; set; }
+
+
         public FrmLogin()
         {
             InitializeComponent();
@@ -36,6 +38,8 @@ namespace G2_Evaluation_Manager
 
         }
 
+        
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text == "")
@@ -50,7 +54,7 @@ namespace G2_Evaluation_Manager
             }
             else
             {
-                if (txtUsername.Text == username && txtPassword.Text == password)
+                if (LoggedTeacher != null && LoggedTeacher.CheckPassword(txtPassword.Text))
                 {
                     FrmStudents frmStudents = new FrmStudents();
                     Hide();
