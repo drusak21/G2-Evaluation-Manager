@@ -1,4 +1,5 @@
 ﻿using G2_Evaluation_Manager.Models;
+using G2_Evaluation_Manager.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,6 +55,7 @@ namespace G2_Evaluation_Manager
             }
             else
             {
+                LoggedTeacher = TeacherRepository.GetTeacher(txtUsername.Text);
                 if (LoggedTeacher != null && LoggedTeacher.CheckPassword(txtPassword.Text))
                 {
                     FrmStudents frmStudents = new FrmStudents();

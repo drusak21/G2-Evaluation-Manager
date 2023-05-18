@@ -43,6 +43,11 @@ namespace G2_Evaluation_Manager.Repositories
             return evaluations;
         }
 
+        internal static object GetEvaluation(object selectedStudent, Activity currentActivity)
+        {
+            throw new NotImplementedException();
+        }
+
         private static Evaluation CreateObject(SqlDataReader reader)
         {
             int idActivities = int.Parse(reader["IdActivities"].ToString());
