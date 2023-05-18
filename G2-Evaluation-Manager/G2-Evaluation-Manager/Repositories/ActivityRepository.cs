@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace G2_Evaluation_Manager.Repositories
 {
-    internal class ActivityRepository
+    public class ActivityRepository
     {
         public static Activity GetActivity(int id)
         {
